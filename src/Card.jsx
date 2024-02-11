@@ -2,7 +2,7 @@ import { useState } from "react";
 import Title from "./Title";
 import Count from "./Count";
 import ResetButton from "./ResetButton";
-import CountButton from "./CountButton";
+import ButtonContainer from "./ButtonContainer";
 
 export default function Card() {
     const [count, setCount] = useState(0)
@@ -13,10 +13,7 @@ export default function Card() {
             <Title limitReached={count === limit ? true : false} /> 
             <Count count={count}/>
             <ResetButton setCount={setCount} />
-            <div className="button-container">
-                <CountButton type={"minus"} setCount={setCount} limit={limit} /> 
-                <CountButton type={"plus"} setCount={setCount} limit={limit} /> 
-            </div>
+            <ButtonContainer setCount={setCount} limit={limit} />
         </div>
     )
 }
