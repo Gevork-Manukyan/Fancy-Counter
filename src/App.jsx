@@ -1,5 +1,12 @@
+import "./index.css"
+import Card from "./Card";
+
 function App() {
-  return <h1>Hello World!</h1>;
+  return (
+    <main>
+      <Card />
+    </main>
+  );
 }
 
 export default App;

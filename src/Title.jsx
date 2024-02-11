@@ -1,3 +1,5 @@
-export default function Title() {
-    return <h1 className="title">Fancy Counter</h1>
+export default function Title({ limitReached }) {
+    return (
+        <h1 className="title">{limitReached ? "LIMIT REACHED" : "Fancy Counter"}</h1>
+    )
 }
