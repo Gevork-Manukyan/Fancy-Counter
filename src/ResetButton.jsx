@@ -2,8 +2,11 @@ import { ResetIcon } from "@radix-ui/react-icons";
 
 
 export default function ResetButton({ setCount }) {
-    const onClickHandler = () => {
+    const onClickHandler = (event) => {
         setCount(0)
+
+        // unfocus the button after clicking (so it doesn't interfer with keyboard events)
+        event.currentTarget.blur()
     }
     
     return (
