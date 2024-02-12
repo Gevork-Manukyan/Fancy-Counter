@@ -6,14 +6,15 @@ import ButtonContainer from "./ButtonContainer";
 
 export default function Card() {
     const [count, setCount] = useState(0)
-    const limit = 3
+    const limit = 5
+    const locked = count === limit ? true : false;
 
     return (
-        <div className="card">
-            <Title limitReached={count === limit ? true : false} /> 
+        <div className={`card ${locked ? "card--limit" : ""}`}>
+            <Title limitReached={locked} /> 
             <Count count={count}/>
             <ResetButton setCount={setCount} />
-            <ButtonContainer setCount={setCount} limit={limit} />
+            <ButtonContainer setCount={setCount} limit={limit} locked={locked} />
         </div>
     )
 }
